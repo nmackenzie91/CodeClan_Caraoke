@@ -1,9 +1,9 @@
-class Customer
-    attr_reader :name, :wallet, :age
+class Room
+    attr_reader :name, :occupants
   
-    def initialize(name, wallet, age)
+    def initialize(name, occupants)
       @name = name
-      @wallet = wallet
-      @age = age 
+      @occupants = occupants
+
     end
   end

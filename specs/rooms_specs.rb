@@ -8,7 +8,12 @@ require_relative('../room')
 class TestRoom < Minitest::Test
 
   def setup
-    @room1 = Room.new()
+    @room1 = Room.new("Room1", [])
 
   end
+
+    def test_name
+        assert_equal("Room1"@room1.name)
+    end 
+
 end 

@@ -1,9 +1,8 @@
-class Customer
-    attr_reader :name, :wallet, :age
+class Song
+    attr_reader :title, :artist
   
-    def initialize(name, wallet, age)
-      @name = name
-      @wallet = wallet
-      @age = age 
+    def initialize(title, artist)
+      @title = title
+      @artist = artist
     end
   end

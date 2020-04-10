@@ -1,9 +1,16 @@
-class Customer
-    attr_reader :name, :wallet, :age
-  
-    def initialize(name, wallet, age)
+class KaraokeBar
+    attr_reader :name, :rooms, :customers
+    
+    def initialize(name, rooms, customers)
       @name = name
-      @wallet = wallet
-      @age = age 
+      @rooms = rooms
+      @customers = customers
+    #   @till = till
     end
+
   end
+
+  # def initialize(name, till)
+  #   @name = name
+  #   @till = till
+  #   @drinks = []
