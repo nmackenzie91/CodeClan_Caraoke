@@ -9,11 +9,11 @@ require_relative('../room')
 class TestKaraokeBar < Minitest::Test
 
   def setup
-    @karaoke_bar = KaraokeBar.new("Go To 11", [1,2,3], [1,2,3])
+    @karaoke_bar = KaraokeBar.new("Go To 11")
     @customer1 = Customer.new("Gill", 75, 24)
-    @room1 = Room.new("Roomy", 3)
-    @room2 = Room.new("Blues", 3)
-    @room3 = Room.new("Rock", 3)
+    @room1 = Room.new("Roomy")
+    @room2 = Room.new("Blues")
+    @room3 = Room.new("Rock")
 
     # @song1 = Song.new()
     # @song2 = Song.new()
@@ -49,16 +49,25 @@ class TestKaraokeBar < Minitest::Test
   end
 
     def test_karaoke_bar_has_more_than_one_customer
-        @customer.add_customer(@customer1)
+        @karaoke_bar.add_customer(@customer1)
         assert_equal(1, @karaoke_bar.customer_count())
     end 
 
-    # def test_add_customer_to_room()
-    #     @karaoke_bar.add_rooms(@room1)
-    #     @room.add_customer(@customer1)
-    #     assert_equal(1, @karaoke_bar.room_count())
-    #     assert_equal(1, @room.customer.size())
-    # end
+    def test_add_customer_to_room()
+        @karaoke_bar.add_rooms(@room1)
+        @karaoke_bar.add_customer(@customer1)
+        @karaoke_bar.add_customer_to_room(@room1,@customer1)
+        assert_equal(1, @karaoke_bar.room_count())
+        assert_equal(1, @karaoke_bar.occupant_count_for_room(@room1))
+    end
+
+    def test_add_customer_to_other_room()
+        @karaoke_bar.add_customer(@customer1)
+        @karaoke_bar.add_customer_to_room(@room1,@customer1)
+        assert_equal(0, @karaoke_bar.room_count())
+        assert_equal(0, @karaoke_bar.occupant_count_for_room(@room1))
+    end
+
 
   end
   
