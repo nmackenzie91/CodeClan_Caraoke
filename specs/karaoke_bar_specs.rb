@@ -15,11 +15,7 @@ class TestKaraokeBar < Minitest::Test
     @room2 = Room.new("Blues")
     @room3 = Room.new("Rock")
 
-    # @song1 = Song.new()
-    # @song2 = Song.new()
-    # @song3 = Song.new()
-
-
+ 
   end
 
   #Test bar name

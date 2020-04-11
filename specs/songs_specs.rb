@@ -14,15 +14,22 @@ class TestSongs < Minitest::Test
     @song5 = Song.new("Summer Night", "Grease")
     @song7 = Song.new("Livin' On A Prayer", "Bon Jovi")
     @song8 = Song.new("Gangnam Style", "PSY")
-    @song9 = Song.new("Wonderwall", "Oasis")
-    @song10 = Song.new("Wonderwall", "Oasis")
-    @song11 = Song.new("Wonderwall", "Oasis")
-    @song12 = Song.new("Wonderwall", "Oasis")
+    @song9 = Song.new("Ironic", "Alanis Morissette")
+    @song10 = Song.new("Hallelujah", "Alexandra Burke")
+    @song11 = Song.new("Dancing Queen", "Abba")
+    @song12 = Song.new("Ring Of Fire", "Johnny Cash")
 
 
   end
-    def test_name
-        assert_equal("Wonderwall"@song1.name)
+    def test_title
+        assert_equal("Wonderwall", @song1.title())
     end 
+
+
+    def test_artist
+        assert_equal("Oasis", @song1.artist())
+    end
+
+    
 
 end 
