@@ -10,13 +10,11 @@ class TestKaraokeBar < Minitest::Test
 
   def setup
     @karaoke_bar = KaraokeBar.new("Go To 11", [1,2,3], [1,2,3])
-    @Customer1 = Customer.new("Gill", 75, 24)
+    @customer1 = Customer.new("Gill", 75, 24)
+    @room1 = Room.new("Roomy", 3)
+    @room2 = Room.new("Blues", 3)
+    @room3 = Room.new("Rock", 3)
 
-
-    # @room1 = Room.new("", )
-    # @room2 = Room.new("", )
-    # @room3 = Room.new("", )
-    
     # @song1 = Song.new()
     # @song2 = Song.new()
     # @song3 = Song.new()
@@ -31,18 +29,53 @@ class TestKaraokeBar < Minitest::Test
 
   #Test customer name
   def test_name2
-    assert_equal("Gill", @Customer1.name())
+    assert_equal("Gill", @customer1.name())
   end 
 
-  def test_room_space
-    
+  def test_karaoke_bar_has_no_rooms()
+    assert_equal(0, @karaoke_bar.room_count())
+  end
+
+  def test_karaoke_bar_has_more_than_one_room
+    @karaoke_bar.add_rooms(@room1)
+    @karaoke_bar.add_rooms(@room2)
+    @karaoke_bar.add_rooms(@room3)
+    assert_equal(3, @karaoke_bar.room_count())
   end 
+
+
+  def test_karaoke_bar_has_no_customer()
+      assert_equal(0, @karaoke_bar.customer_count())
+  end
+
+    def test_karaoke_bar_has_more_than_one_customer
+        @customer.add_customer(@customer1)
+        assert_equal(1, @karaoke_bar.customer_count())
+    end 
+
+    # def test_add_customer_to_room()
+    #     @karaoke_bar.add_rooms(@room1)
+    #     @room.add_customer(@customer1)
+    #     assert_equal(1, @karaoke_bar.room_count())
+    #     assert_equal(1, @room.customer.size())
+    # end
+
+  end
   
 
-  def test_can_add_customer_to_room
-    @room.add_customer(@Customer1)
-    assert_equal("Gill", @KaraokeBar.rooms)
-  end 
+
+
+# def test_remove_customer_from_room
+#   @karaoke_bar.remove_customer_from_room(@Customer1)
+#   assert_equal(0, @room.room_count())
+# end 
+
+  
+
+#   def test_can_add_customer_to_room
+#     @karaoke_bar.add_customer(@Customer1)
+#     assert_equal(1, @KaraokeBar.rooms)
+#   end 
 
 # def test_can_add_drinks
 #   @pub.add_drink(@drink1)
@@ -51,20 +84,3 @@ class TestKaraokeBar < Minitest::Test
 
 
 
-
-
-
-#   @earth = Planet.new("Earth", 12756, 149.6, 1)
-#   @jupiter = Planet.new("Jupiter", 142796, 778.3, 67)
-#   @mars = Planet.new("Mars", 6787, 227.9, 2)
-#   @mercury = Planet.new("Mercury", 4878, 57.9, 0)
-#   @neptune = Planet.new("Neptune", 48600, 4497.1, 13)
-#   @pluto = Planet.new("Pluto", 2274, 5913, 4)
-#   @saturn = Planet.new("Saturn", 120660, 1427.0, 62)
-#   @uranus = Planet.new("Uranus", 51118, 2871.0, 27)
-#   @venus = Planet.new("Venus", 12104, 108.2, 0)
-
-#   @planets = [@earth, @jupiter, @mars, @mercury, @neptune, @pluto, @saturn, @uranus, @venus]
-#   @solar_system = StarSystem.new("Solar System", @planets)
-
-end 
