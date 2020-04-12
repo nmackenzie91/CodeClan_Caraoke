@@ -11,9 +11,8 @@ class TestRoom < Minitest::Test
 
   def setup
     @room1 = Room.new("Room1", [], 3)
-    # @room2 = Room.new("Room2", ["Ginl","smith", "neil","Martin","Old Jeffy boi"])
     @customer1 = Customer.new("Steve", 200, 25)
-    @customer2 = Customer.new("Boaby", 300, 93)
+    @customer2 = Customer.new("Big Boaby Big Bucks", 3000, 93)
     @customer3 = Customer.new("Sarah", 100, 18)
     @customer4 = Customer.new("Kevin", 300, 37)
 
@@ -21,11 +20,15 @@ class TestRoom < Minitest::Test
     @song2 = Song.new("Song 2", "Blur")
 
     @customers = [@customer1, @customer2]
+
   end
 
     def test_name()
         assert_equal("Room1", @room1.name)
     end 
+
+
+
 
     def test_add_customer_to_room()
         @room1.add_customer_to_room(@customer1)

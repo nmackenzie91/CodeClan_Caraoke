@@ -14,10 +14,7 @@ class TestSongs < Minitest::Test
     @song5 = Song.new("Summer Night", "Grease")
     @song7 = Song.new("Livin' On A Prayer", "Bon Jovi")
     @song8 = Song.new("Gangnam Style", "PSY")
-    @song9 = Song.new("Ironic", "Alanis Morissette")
-    @song10 = Song.new("Hallelujah", "Alexandra Burke")
-    @song11 = Song.new("Dancing Queen", "Abba")
-    @song12 = Song.new("Ring Of Fire", "Johnny Cash")
+
 
 
   end

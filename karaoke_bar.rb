@@ -1,13 +1,13 @@
 class KaraokeBar
     attr_accessor :name, :rooms, :customers
     
-    def initialize(name)
-      @name = name
-      @rooms = []
-      @customers = []
-      @till = 0
-      @entry_fee = 20
-    end
+  def initialize(name)
+    @name = name
+    @rooms = []
+    @customers = []
+    @till = 0
+    @entry_fee = 20
+  end
 
     def room_count()
       return @rooms.size()
@@ -39,4 +39,6 @@ class KaraokeBar
 
   
     
-  end
+  
+  
+end

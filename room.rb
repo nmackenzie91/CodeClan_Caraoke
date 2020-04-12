@@ -1,14 +1,14 @@
 class Room
     attr_accessor :name, :occupants
   
-    def initialize(name, occupants, capacity)
-      @name = name
-      @occupants = []
-      @capacity = capacity
-      @songs = []
-      
+  def initialize(name, occupants, capacity)
+    @name = name
+    @occupants = []
+    @capacity = capacity
+    @songs = []
+    
 
-    end
+  end
 
     def occupant_count()
         return @occupants.count()
@@ -48,4 +48,4 @@ class Room
     end 
 
 
-  end 
+end 
