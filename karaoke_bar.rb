@@ -31,10 +31,12 @@ class KaraokeBar
                 room.add_customer_to_room(customer)
             end 
         end
-    end 
+    end   
 
     def occupant_count_for_room(room)
         room.occupant_count()
     end
+
+  
     
   end

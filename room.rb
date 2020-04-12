@@ -35,14 +35,10 @@ class Room
       @occupants.delete(customer)
     end
 
-
-
     def remove_all_customers_from_room(customer)
       @occupants.delete(customer)
     end
     
-
-
     def max_capacity_of_room()
         if @capacity <= occupant_count()
             return true
