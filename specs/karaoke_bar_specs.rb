@@ -11,9 +11,9 @@ class TestKaraokeBar < Minitest::Test
   def setup
     @karaoke_bar = KaraokeBar.new("Go To 11")
     @customer1 = Customer.new("Gill", 75, 24)
-    @room1 = Room.new("Roomy")
-    @room2 = Room.new("Blues")
-    @room3 = Room.new("Rock")
+    @room1 = Room.new("Roomy", [])
+    @room2 = Room.new("Blues", [])
+    @room3 = Room.new("Rock", [])
 
  
   end
@@ -59,9 +59,9 @@ class TestKaraokeBar < Minitest::Test
 
     def test_add_customer_to_other_room()
         @karaoke_bar.add_customer(@customer1)
-        @karaoke_bar.add_customer_to_room(@room1,@customer1)
+        @karaoke_bar.add_customer_to_room(@room2,@customer1)
         assert_equal(0, @karaoke_bar.room_count())
-        assert_equal(0, @karaoke_bar.occupant_count_for_room(@room1))
+        assert_equal(0, @karaoke_bar.occupant_count_for_room(@room2))
     end
 
 
@@ -69,23 +69,6 @@ class TestKaraokeBar < Minitest::Test
   
 
 
-
-# def test_remove_customer_from_room
-#   @karaoke_bar.remove_customer_from_room(@Customer1)
-#   assert_equal(0, @room.room_count())
-# end 
-
-  
-
-#   def test_can_add_customer_to_room
-#     @karaoke_bar.add_customer(@Customer1)
-#     assert_equal(1, @KaraokeBar.rooms)
-#   end 
-
-# def test_can_add_drinks
-#   @pub.add_drink(@drink1)
-#   assert_equal(1, @pub.drink_count)
-# end
 
 
 
