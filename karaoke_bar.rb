@@ -5,7 +5,8 @@ class KaraokeBar
       @name = name
       @rooms = []
       @customers = []
-    #   @till = till
+      @till = 0
+      @entry_fee = 20
     end
 
     def room_count()
@@ -36,30 +37,4 @@ class KaraokeBar
         room.occupant_count()
     end
     
-    # def remove_customer_from_room()
-    #   @room.delete
-
-    # def test_remove_customer_from_room
-    #   @karaoke_bar.remove_customer_from_room(@Customer1)
-    #   assert_equal(0, @room.room_count())
-    # end 
-
-   
-
-    # def create_room(room)
-    #     @room.push(room)
-    # end 
-
-
   end
-
-  # def test_can_add_customer_to_room
-  #   @karaoke_bar.add_customer(@Customer1)
-  #   assert_equal(1, @karaoke_bar.add_customer)
-  # end 
-
-
-  # def initialize(name, till)
-  #   @name = name
-  #   @till = till
-  #   @drinks = []
